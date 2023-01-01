@@ -109,3 +109,23 @@ lspconfig["sumneko_lua"].setup({
     },
   },
 })
+
+lspconfig["intelephense"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["gopls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["bashls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+lspconfig["jsonls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})

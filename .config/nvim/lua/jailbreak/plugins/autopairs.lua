@@ -1,6 +1,6 @@
 -- import nvim-autopairs safely
-local autopairs_setup, autopairs = pcall(require, "nvim-autopairs")
-if not autopairs_setup then
+local autopairs_status, autopairs = pcall(require, "nvim-autopairs")
+if not autopairs_status then
   return
 end
 
@@ -15,8 +15,8 @@ autopairs.setup({
 })
 
 -- import nvim-autopairs completion functionality safely
-local cmp_autopairs_setup, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-if not cmp_autopairs_setup then
+local cmp_autopairs_status, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")
+if not cmp_autopairs_status then
   return
 end
 
