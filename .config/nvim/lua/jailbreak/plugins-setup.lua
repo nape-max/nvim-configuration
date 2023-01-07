@@ -73,6 +73,9 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/null-ls.nvim'
    -- bridges gap b/w mason & null-ls
   use 'jayp0521/mason-null-ls.nvim'
+   -- go formatter
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua'
   -- treesitter configuration
   use {
     'nvim-treesitter/nvim-treesitter',

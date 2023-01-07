@@ -48,6 +48,17 @@ end
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+-- used to enable autoformat for Go on save
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimport()
+  end,
+  group = format_sync_grp,
+})
+
+
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
 local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
@@ -119,6 +130,8 @@ lspconfig["gopls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+require('go').setup()
 
 lspconfig["bashls"].setup({
   capabilities = capabilities,

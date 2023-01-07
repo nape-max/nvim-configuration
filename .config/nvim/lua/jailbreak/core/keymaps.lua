@@ -5,9 +5,12 @@ local keymap = vim.keymap -- for conciseness
 -- general keymaps
 keymap.set("i", "jk", "<ESC>")
 
-keymap.set("n", "<leader>nh", ":nohl<CR>") 
+keymap.set("n", "<leader>nh", ":nohl<CR>")
 
 keymap.set("n", "x", '"_x')
+
+keymap.set("n", "<C-h>", "$")
+keymap.set("n", "<C-l", "^")
 
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
@@ -16,6 +19,10 @@ keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+keymap.set("n", "<leader>s<Left>", "<C-w><Left>") -- move to left split from current
+keymap.set("n", "<leader>s<Right>", "<C-w><Right>") -- move to right split from current
+keymap.set("n", "<leader>s<Up>", "<C-w><Up>") -- move to up split from current
+keymap.set("n", "<leader>s<Down>", "<C-w><Down>") -- move to down split from current
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
